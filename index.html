@@ -387,6 +387,8 @@
         <span data-pos-tag="NP00000">Ítaques</span>
         <span data-pos-tag="Fp">.</span>
         </p>
+        
+        <button id="trigger" type="button">Dale!</button>
 
         <p>Konstantinos P. Kavafis [1911]</p>
 
@@ -395,8 +397,33 @@
         <p>Extret de la pàgina de <a href="http://www.thilikos.info/Home/itaca-1">Dimitrios Thilikos</a></p>
         
         <script>
+        // Returns a random integer between min (included) and max (included)
+        // Using Math.round() will give you a non-uniform distribution!
+        // from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+        function getRandomIntInclusive(min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        
         var pos_tags = {"AQ0CS0": ["fero\u00e7", "preferible"], "AQ0FP0": ["bones"], "AQ0FS0": ["pobra"], "AQ0MP0": ["fenicis", "delicats", "delicats"], "AQ0MS0": ["llarg", "ple", "alt", "llarg", "vell", "ric", "bell"], "CC": ["i", "i", "i", "i", "i", "i", "i", "i", "i", "I"], "CS": ["Quan", "que", "si", "si", "que", "si", "si", "que", "Que", "que", "que", "com", "que", "que", "quan", "que", "que", "si", "que", "com"], "DA0CS0": ["l'", "l'", "l'"], "DA0FP0": ["les", "les", "les"], "DA0FS0": ["la", "la", "la", "la", "la"], "DA0MP0": ["Els", "els", "Els", "els", "els", "els", "els"], "DA0MS0": ["el", "el", "el", "el", "el", "el", "el", "el", "el", "el", "el", "el"], "DI0FP0": ["moltes", "moltes"], "DI0FS0": ["una", "tota", "tanta", "tanta"], "DI0MP0": ["molts"], "DI0MS0": ["un"], "DT0FS0": ["quina", "quina"], "Fat": ["!"], "Fc": [",", ",", ",", ",", ",", ",", ",", ",", ",", ",", ",", ",", ",", ",", ",", ",", ",", ",", ",", ",", ",", ",", ",", ","], "Fd": [":", ":"], "Fp": [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."], "Fx": [";", ";"], "NCCS000": ["cap", "cap"], "NCFP000": ["aventures", "coneixences", "coses", "portes", "matinades", "coses", "corals", "nacres", "ciutats", "riqueses", "trobes"], "NCFS000": ["emoci\u00f3", "escollida", "\u00e0nima", "\u00e0nima", "delectan\u00e7a", "joia", "mena", "abundor", "idea", "travessia", "illa", "experi\u00e8ncia"], "NCMP000": ["ulls", "mercats", "mabres", "banussos", "perfums", "perfums", "anys"], "NCMS000": ["viatge", "cam\u00ed", "ple", "cam\u00ed", "pensament", "esperit", "cos", "cam\u00ed", "estiu", "port", "cor", "dest\u00ed", "cam\u00ed", "viatge"], "NP00000": ["\u00cdtaca", "Lestr\u00edgons", "C\u00edclops", "Posid\u00f3", "Lestr\u00edgons", "C\u00edclops", "Posid\u00f3", "Egipte", "\u00cdtaca", "\u00cdtaca", "\u00cdtaca", "\u00cdtaca", "Savi", "\u00cdtaques"], "P020S000": ["te", "t'"], "P0300000": ["s'"], "PI0CS000": ["Res"], "PI0MS000": ["tot"], "PP2CS000": ["et", "tu", "et", "t'", "t'", "et", "t'"], "PP3CN000": ["n'", "-hi", "hi", "-hi"], "PP3CP000": ["els", "els"], "PP3FS000": ["ella"], "PP3MSA00": ["-lo"], "PR0CN000": ["que", "que", "que", "que", "que", "que", "que", "qu\u00e8"], "PX2FS0S0": ["teva", "teva"], "PX2MP0S0": ["teus"], "PX2MS0S0": ["teu", "teu", "teu"], "RG": ["mai", "se't", "alhora", "mai", "Sempre", "Per\u00f2", "gens", "ja", "m\u00e9s", "ja", "b\u00e9", "ja"], "RN": ["no", "no", "no", "no", "no", "no", "no", "no", "pas", "no", "no"], "SPS00": ["per", "a", "de", "d'", "de", "en", "amb", "dins", "davant", "de", "d'", "amb", "amb", "en", "en", "de", "de", "a", "d'", "a", "per", "de", "a", "d'", "d'", "a", "de", "sense", "de", "Sense", "a", "amb"], "VAIC2S0": ["hauries"], "VAIF2S0": ["haur\u00e0s", "haur\u00e0s"], "VAIP2S0": ["has", "Has", "Has", "has"], "VAIP3S0": ["ha"], "VASP1S0": ["hagi", "hagi"], "VMG0000": ["fent"], "VMIF2S0": ["trobar\u00e0s", "entrar\u00e0s"], "VMII3P0": ["ignoraven"], "VMIP2S0": ["surts"], "VMIP3P0": ["exhibeixen", "saben", "volen"], "VMIP3S0": ["mant\u00e9", "toca", "dre\u00e7a", "t\u00e9"], "VMN0000": ["fer", "pregar", "pregar", "aturar", "comprar", "aprendre", "aprendre", "arribar", "esperar", "dar", "fer", "donar", "comprendre", "dir"], "VMP00SM": ["a\u00efrat", "guanyat", "donat", "sortit", "enganyat", "fet", "pogut"], "VMSP1S0": ["duri", "pugui"], "VMSP2S0": ["esfereeixis", "topis", "puguis", "puguis", "vagis", "tingues", "forcis", "fondegis"], "VSIF3S0": ["ser\u00e0"], "VSIP3P0": ["s\u00f3n"], "VSIP3S0": ["\u00e9s", "\u00e9s", "\u00c9s", "\u00e9s"], "VSSP1S0": ["sigui", "sigui"], "VSSP2S0": ["siguis"], "VSSP3P0": ["siguin"]};
-        console.log(pos_tags);
+        var clickCallback = function (event) {
+            console.log("Click!");
+            var spans = document.getElementsByTagName("span");
+            for (var i = 0; i < spans.length; i++) {
+                var pos_tag = spans[i].getAttribute('data-pos-tag');
+                if (typeof pos_tag !== "undefined" && pos_tag != null) {
+                    console.log(pos_tag);
+                    console.log(spans[i].innerHTML, 
+                                spans[i].getAttribute('data-pos-tag'),
+                                pos_tags[pos_tag]);
+                    var num_pos_tags = pos_tags[pos_tag].length;
+                    var j = getRandomIntInclusive(0, num_pos_tags-1);
+                    console.log(pos_tags[pos_tag][j]);
+                    spans[i].innerHTML = pos_tags[pos_tag][j];
+                }
+            }
+        };
+        var button = document.getElementById("trigger");
+        button.addEventListener("click", clickCallback);
         </script>
     </body>
 </html>
